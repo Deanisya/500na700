@@ -1,0 +1,28 @@
+:root {
+  /* LAYOUT — контейнер контента */
+  --container-width: 1440px;
+
+  /* COLORS */
+  --color-white: #ffffff;
+  --color-black: #0f0f17;
+  --color-desc: #87878b;
+  --color-gradient-start: #fb8627;
+  --color-gradient-end: #f5bef6;
+  --gradient: linear-gradient(
+    180deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-end) 100%
+  );
+
+  /* TYPOGRAPHY — Inter */
+  --font-sans: var(--font-inter), sans-serif;
+
+  /* Sizes */
+  --text-h1: 40px;
+  --text-h2: 24px;
+  --text-h3: 20px;
+  --text-h4: 16px;
+  --text-base: 16px;
+  --link: 16px;
+  --caption: 12px;
+}

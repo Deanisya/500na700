@@ -1,0 +1,61 @@
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover .title {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover .imageWrap {
+    border-radius: 20px;
+  }
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 440 / 300;
+  overflow: hidden;
+  transition: border-radius 0.2s ease;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title,
+.description,
+.date {
+  @media (max-width: 452px) {
+    padding: 0 20px 0 10px;
+  }
+}
+.title {
+  margin: 20px 0 10px;
+  font-weight: 600;
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  text-transform: uppercase;
+  @media (max-width: 480px) {
+    font-size: var(--text-h3);
+  }
+}
+.description {
+  margin-bottom: 20px;
+  color: var(--color-desc);
+  font-weight: 400;
+  font-size: var(--text-h4);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.date {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: var(--text-h4);
+}
