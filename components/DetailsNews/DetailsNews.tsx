@@ -6,12 +6,7 @@ export default function DetailsNews({ news }: { news: NewItems }) {
   return (
     <article className={s.article}>
       <div className={s.imageWrap}>
-        <Image
-          src={news.image}
-          alt={news.title}
-          fill
-          className={s.image}
-        ></Image>
+        <Image src={news.image} alt={news.title} fill className={s.image} />
       </div>
       <div className={s.description}>
         <h1 className={s.title}>{news.title}</h1>

@@ -11,7 +11,7 @@ export default function Footer() {
             alt="logo"
             width={103}
             height={124}
-          ></Image>
+          />
           <p className={s.text}>Креативное агентство 500na700</p>
         </div>
       </div>

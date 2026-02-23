@@ -14,8 +14,6 @@
     position: relative;
     width: 100%;
     aspect-ratio: 440 / 300;
-    // overflow: hidden;
-    // transition: border-radius 0.2s ease;
   }
   .image {
     object-fit: cover;
@@ -31,7 +29,7 @@
     }
 
     .title {
-      font-weight: 600px;
+      font-weight: 600;
       font-size: var(--text-h1);
       margin-bottom: 20px;
       line-height: 130%;
@@ -61,7 +59,7 @@
         }
       }
       .detailedDescription {
-        font-weight: 400px;
+        font-weight: 400;
         white-space: pre-line;
         font-size: var(--text-h4);
         margin-bottom: 110px;

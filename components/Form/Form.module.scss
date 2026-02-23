@@ -1,0 +1,162 @@
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .formField {
+    .formFieldInput {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--color-black);
+      border-radius: 10px;
+      font-size: var(--text-h4);
+    }
+
+    .formFieldInput::placeholder {
+      font-size: var(--text-h4);
+      font-weight: 400;
+      line-height: 130%;
+      opacity: 0.5;
+    }
+
+    .formFieldInput:focus::placeholder {
+      opacity: 1;
+      color: var(--color-black);
+    }
+
+    .formCheckboxLabel {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--color-black);
+      cursor: pointer;
+    }
+
+    .formConsentText {
+      opacity: 0.5;
+      font-size: var(--caption);
+      text-transform: uppercase;
+    }
+
+    .formFieldError {
+      display: block;
+      margin-top: 3px;
+      font-size: var(--caption);
+      color: red;
+      line-height: 1.3;
+    }
+
+    .formCheckboxInput {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      opacity: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .formCheckboxMark {
+      position: relative;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      min-height: 18px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: background-image 0.2s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        background: var(--gradient);
+        filter: brightness(1.2) saturate(1.25);
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+    }
+
+    .formCheckboxInput:checked ~ .formCheckboxMark {
+      background-image: var(--checkbox-icon, url("/icons/checkbox.svg"));
+    }
+  }
+
+  .formFieldConsent {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  .formSubmitButton {
+    position: relative;
+    z-index: 2;
+    padding: 12px 20px;
+    border-radius: 40px;
+    max-width: 126px;
+    border: none;
+    color: var(--color-black);
+    background: var(--gradient);
+    cursor: pointer;
+    font-size: var(--text-h4);
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      border-radius: 40px;
+      padding: 1px;
+      background: var(--gradient);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 40px;
+      background: var(--color-white);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &:hover::after {
+      opacity: 0;
+    }
+  }
+
+  .formSubmitButton:hover {
+    background: var(--gradient);
+    color: var(--color-white);
+  }
+
+  .formSubmitButtonLabel {
+    position: relative;
+    z-index: 1;
+  }
+}

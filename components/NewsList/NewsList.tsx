@@ -15,7 +15,7 @@ export default function NewsList() {
     <>
       <h1 className={s.title}>Новости</h1>
       <ul className={s.grid}>
-        {data?.map((item) => (
+        {data.map((item) => (
           <li key={item.id}>
             <NewsCard item={item} />
           </li>

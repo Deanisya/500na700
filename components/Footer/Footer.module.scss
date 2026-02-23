@@ -17,7 +17,9 @@
       text-transform: uppercase;
       font-size: var(--text-h2);
       font-weight: 600;
-      transform: translateX(-40px);
+      @media (min-width: 1440px) {
+        transform: translateX(-40px);
+      }
     }
   }
 }
