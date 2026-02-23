@@ -16,10 +16,14 @@ p {
     padding: 0;
     background-color: var(--color-black);
     font-family: var(--font-inter);
+    color: var(--color-white);
   }
   .container {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
+    // @media (max-width: 480px) {
+    //   margin: 0;
+    // }
   }
 }

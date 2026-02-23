@@ -11,20 +11,23 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 440px);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
   row-gap: 40px;
   justify-content: center;
   list-style: none;
-  margin: 0 0 40px 0;
+  margin: 0 40px 40px;
   padding: 0;
 
   @media (max-width: 1320px) {
-    grid-template-columns: repeat(2, 440px);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 920px) {
-    grid-template-columns: minmax(280px, 440px);
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(280px, 1fr);
     justify-content: center;
+  }
+  @media (max-width: 480px) {
+    margin: 0 0 40px;
   }
 }

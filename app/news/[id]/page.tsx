@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { getNewsById } from "@/fakeApi/news";
+import DetailsNews from "@/components/DetailsNews/DetailsNews";
+import Footer from "@/components/Footer/Footer";
 
 type Props = {
   params: Promise<{ id: string }>;
-};
+}; // id — строка из URL
 
 export default async function NewsPage({ params }: Props) {
   const { id } = await params;
@@ -12,11 +14,11 @@ export default async function NewsPage({ params }: Props) {
   if (!news) notFound();
 
   return (
-    <main className="min-h-screen p-8">
-      <h1>{news.title}</h1>
-      <p>{news.date}</p>
-      <p>{news.description}</p>
-      {news.detailedDescription && <p>{news.detailedDescription}</p>}
-    </main>
+    <>
+      <main className="container">
+        <DetailsNews news={news} />
+      </main>
+      <Footer />
+    </>
   );
 }

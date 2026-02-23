@@ -2,12 +2,13 @@
 
 import { useNews } from "@/hooks/useNews";
 import NewsCard from "../NewsCard/NewsCard";
-import s from "./NewList.module.scss";
+import Preloader from "@/components/Preloader/Preloader";
+import s from "./NewsList.module.scss";
 
 export default function NewsList() {
   const { data, loading, error } = useNews();
 
-  if (loading) return <p>Загрузка...</p>;
+  if (loading) return <Preloader />;
   if (error) return <p>Ошибка: {error.message}</p>;
   if (!data?.length) return <p>Новостей пока нет</p>;
   return (

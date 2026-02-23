@@ -1,0 +1,74 @@
+.article {
+  display: grid;
+  grid-template-columns: minmax(280px, 30.556vw) 1fr; // 30.555vw ≈ 440px при 1440px
+  margin: 40px;
+  column-gap: 20px;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 480px) {
+    margin: 0;
+  }
+
+  .imageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 440 / 300;
+    // overflow: hidden;
+    // transition: border-radius 0.2s ease;
+  }
+  .image {
+    object-fit: cover;
+  }
+
+  .description {
+    max-width: 504px; // на 496px не вмещается заголовок 4
+    @media (max-width: 1200px) {
+      max-width: 100%;
+    }
+    @media (max-width: 480px) {
+      margin: 0 10px;
+    }
+
+    .title {
+      font-weight: 600px;
+      font-size: var(--text-h1);
+      margin-bottom: 20px;
+      line-height: 130%;
+      text-transform: uppercase;
+      @media (max-width: 900px) {
+        font-size: var(--text-h2);
+        margin: 20px 0 10px;
+      }
+    }
+    .date {
+      color: var(--color-desc);
+      font-weight: 400;
+      font-size: var(--text-h4);
+    }
+    .descriptionSmall {
+      max-width: 440px;
+      @media (max-width: 1200px) {
+        max-width: 100%;
+      }
+      .subtitle {
+        font-weight: 600;
+        font-size: var(--text-h3);
+        margin: 40px 0 20px;
+        text-transform: uppercase;
+        @media (max-width: 1200px) {
+          margin: 30px 0 10px;
+        }
+      }
+      .detailedDescription {
+        font-weight: 400px;
+        white-space: pre-line;
+        font-size: var(--text-h4);
+        margin-bottom: 110px;
+        @media (max-width: 1200px) {
+          margin-bottom: 80px;
+        }
+      }
+    }
+  }
+}
